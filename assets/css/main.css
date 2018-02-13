@@ -1,0 +1,210 @@
+/* ....................................GENERAL */
+
+/* Sets background image for body, back-up color and project font*/
+
+body {
+    background-image: url("./assets/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #2b353a;
+    font-family: "helvetica-neue", sans-serif;
+
+}
+
+h1 {
+    color: white;
+}
+
+/* ....................................CONTAINER */
+
+/* aligns text to center removes margin */
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ....................................GAME BOARD */
+
+/* removes the margin top space, assigns width and height, outlines the device with border and makes circle with border radius */
+
+.game-board {
+    margin: 0 auto;
+    margin-top: 50px;
+    border: solid 10px black;
+    width: 600px;
+    height: 600px;
+    border-radius: 600px;
+    box-shadow: -10px 10px 7px 0px rgba(50, 50, 50, 0.75);
+}
+
+/* ....................................PADS */
+
+/* removes margin, sets positioning, width, height, z-index positions it above the board and outlines it with a border */
+
+.pad {
+    margin: 0;
+    float: left;
+    position: relative;
+    width: 290px;
+    height: 290px;
+    z-index: 8;
+    border: 5px solid black;
+}
+
+/* colors a pad green and rounds the corner to fit in the board */
+
+.green {
+    background-color: green;
+    border-radius: 300px 0 0 0;
+}
+
+/* colors a pad darkgreen when active */
+
+.green-active {
+    background-color: darkgreen !important;
+}
+
+/* colors a pad red and rounds the corner to fit in the board */
+
+.red {
+    background-color: red;
+    border-radius: 0 300px 0 0;
+}
+
+/* colors a pad darkredwhen active */
+
+.red-active {
+    background-color: darkred !important;
+}
+
+/* colors a pad yellow and rounds the corner to fit in the board */
+
+.yellow {
+    background-color: yellow;
+    border-radius: 0 0 0 300px;
+}
+
+/* colors a pad gold when active */
+
+.yellow-active {
+    background-color: #BDB76B !important;
+}
+
+/* colors a pad blue and rounds the corner to fit in the board */
+
+.blue {
+    background-color: blue;
+    border-radius: 0 0 300px 0;
+}
+
+/* colors a pad darkblue when active */
+
+.blue-active {
+    background-color: darkblue!important;
+}
+
+/* ....................................CONTROLS */
+
+/* sets width, height, color, outline and positions it above game board and pads and in the center */
+
+.controls {
+    width: 245px;
+    height: 245px;
+    margin-left: 160px;
+    margin-top: 160px;
+    background-color: white;
+    border: solid 10px black;
+    border-radius: 150px;
+    position: absolute;
+    z-index: 10;
+}
+
+/* positions and styles the title */
+
+.game-title {
+    margin-top: 30px;
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+/* positions and aligns the elements assigned this class*/
+
+.inline-positioner {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+/* sets height and width and adds border outline */
+
+.display {
+    width: 60px;
+    height: 45px;
+    border: solid 2px black;
+    border-radius: 10px;
+    font-size: 40px;
+    background-color: #342626;
+    color: white;
+}
+
+/* positions and styles start and strict text */
+
+.start,
+.strict {
+    margin: 0px;
+    margin-left: 20px;
+    text-align: center;
+    width: 55px;
+    height: 55px;
+    border: solid 2px black;
+    border-radius: 30px;
+    color: black;
+    font-size: 12px;
+    line-height: 55px;
+    font-weight: bold;
+}
+
+/* colors button red */
+
+.start {
+    background-color: red;
+
+}
+
+/* colors button yellow */
+
+.strict {
+    background-color: yellow;
+}
+
+/* styles right side of on/off switch */
+
+.switch-right {
+    width: 60px;
+    height: 30px;
+    border: solid 1px black;
+    background-color: black;
+
+}
+
+/* styles left side of on/off switch */
+
+.switch-left {
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+
+}
+
+/* styles crown image */
+
+.crown {
+    margin-left: auto;
+    margin-right: auto;
+    height:10%;
+    
+}
