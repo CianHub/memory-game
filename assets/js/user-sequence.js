@@ -1,4 +1,8 @@
 //....................................................VARIABLES
+
+//stores playerSequence
+playerSequence = [];
+
 //stores gameSequence
 gameSequence = [];
 
@@ -25,6 +29,10 @@ var padSounds = [
     "./assets/sounds/Hit A Inspir 4.wav" //blue
 ];
 
+var correct = "./assets/sounds/correct.wav";
+
+var incorrect = "./assets/sounds/incorrect.wav";
+
 //......................................................FUNCTIONS
 
 //...................INITALISE FUNCTION
@@ -44,7 +52,32 @@ $(document).ready(function() {
         computerSequence();
 
     });
+
+//...................USER SEQUENCE FUNCTION
+
+    $(".pad").click(function() {
+
+        //id is = to the id of the pad clicked
+        id = $(this).attr("id");
+
+        // Color is = to the second class associated with the clicked pad. As each pad has a pad class, a unique color class and a third temporary active class while clicked the array returned is indexed at 1 in order to return the color.
+        color = $(this).attr("class").split(" ")[1];
+
+        //Adds the active class and plays a sound to the clicked pad using the id and color as parameters
+        playerSequence.push(id);
+
+        activePad(id, color);
+
+        //console.log("playerSequence is " + playerSequence);
+
+        //TESTING
+        //console.log($(this).attr("class").split(" "));
+
+ 
+    });
+
 });
+
 
 //...................COMPUTER SEQUENCE FUNCTION
 
@@ -84,16 +117,17 @@ function computerSequence() {
         i++;
 
         //TESTING
-        //console.log("i is " + i);
+        console.log("i is " + i);
 
         //TESTING
-        //console.log("gameSequence array is " + gameSequence);
+        console.log("gameSequence array is " + gameSequence);
 
         // if i is equal to the number of items in the array the interval clears and reinitialises.
         if (i == gameSequence.length) {
             clearInterval(gameInterval);
 
             i = 0;
+
 
             //TESTING
             console.log("interval restarted");
