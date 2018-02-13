@@ -19,7 +19,7 @@ var color;
 level = 0;
 
 //The number of levels in the game
-const endLevel = 10;
+const endLevel = 1;
 
 //Stores sound files
 var padSounds = [
@@ -73,7 +73,57 @@ $(document).ready(function() {
         //TESTING
         //console.log($(this).attr("class").split(" "));
 
- 
+        //If checkSequence is false 
+        if (!checkSequence()) {
+
+            //Run displayError
+            //displayError();
+
+            //reset playersequence
+            playerSequence = [];
+
+        }
+
+        //If the the player and computer arrays are the same and the player array is shorter than the max level, as it should be the same length as the computer sequence which in turn is coded according to the level number
+        if (playerSequence.length == gameSequence.length && playerSequence.length < endLevel) {
+
+            //level = level + 1
+            level++
+
+            //resets playerSequence
+            playerSequence = [];
+
+            //reloads computerSequence
+            computerSequence();
+
+        }
+        // If playerSequence is shorter than the end level number basically checks if you have completed every level
+        if (playerSequence.length == endLevel) {
+
+            //change display to win
+            $(".display").text("Win");
+
+            /* var img = document.createElement("img")
+            img.src = "./assets/images/winner.png";
+            $(".display").append(img);
+            $("img").addClass("crown"); */
+
+            //new audio object
+            var correctSound = new Audio();
+
+            //Source of audio is correct variable
+            correctSound.src = correct;
+
+            //audio volume
+            correctSound.volume = 0.3;
+
+            //looping is off
+            correctSound.loop = false;
+
+            //plays audio file
+            correctSound.play();
+
+        }
     });
 
 });
@@ -189,4 +239,24 @@ function padSound(id) {
     //console.log("audio id is " + id);
 
 };
+
+//...................CHECK SEQUENCE FUNCTION
+
+//compares player and computer sequences element by element
+function checkSequence() {
+
+    //runs through each item 
+    for (var i = 0; i < playerSequence.length; i++) {
+
+        //compares each item in playerSequence to each item in gameSequence
+        if (playerSequence[i] != gameSequence[i]) {
+
+            //if they are not equal returns false
+            return false;
+        }
+    }
+    //if they are equal return true
+    return true;
+}
+
 
