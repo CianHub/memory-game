@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     });
 
-//...................USER SEQUENCE FUNCTION
+    //...................USER SEQUENCE FUNCTION
 
     $(".pad").click(function() {
 
@@ -77,7 +77,7 @@ $(document).ready(function() {
         if (!checkSequence()) {
 
             //Run displayError
-            //displayError();
+            displayError();
 
             //reset playersequence
             playerSequence = [];
@@ -259,4 +259,36 @@ function checkSequence() {
     return true;
 }
 
+//...................DISPLAY ERROR FUNCTION
 
+function displayError() {
+    $(".display").text("--");
+    var count = 0;
+    var myError = setInterval(function() {
+        $(".display").text("..");
+        count++
+        if (count == 3) {
+            $(".display").text(level);
+            clearInterval(myError);
+            playerSequence = [];
+            counter = 0;
+
+            var incorrectSound = new Audio();
+
+            incorrectSound.src = incorrect;
+
+            //audio volume
+            incorrectSound.volume = 0.3;
+
+            //looping is off
+            incorrectSound.loop = false;
+
+            //plays audio file
+            incorrectSound.play();
+
+            //TESTING
+            console.log("Incorrect");
+        }
+
+    }, 500)
+}
