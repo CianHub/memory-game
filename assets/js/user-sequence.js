@@ -19,7 +19,7 @@ var color;
 level = 0;
 
 //The number of levels in the game
-const endLevel = 1;
+const endLevel = 10;
 
 //Stores sound files
 var padSounds = [
