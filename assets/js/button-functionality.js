@@ -33,6 +33,8 @@ var correct = "./assets/sounds/correct.wav";
 
 var incorrect = "./assets/sounds/incorrect.wav";
 
+var power = "off";
+
 //......................................................FUNCTIONS
 
 //...................INITALISE FUNCTION
@@ -40,92 +42,118 @@ var incorrect = "./assets/sounds/incorrect.wav";
 // Loads when the DOM is ready
 $(document).ready(function() {
 
+    $(".switch").click(function() {
+        if (power == "off") {
+            $(".switch-right").css("background-color", "gray");
+            $(".switch-left").css("background-color", "black");
+            $(".display").css("opacity", "1");
+            
+            playerSequence = [];
+            gameSequence = [];
+            level = 0;
+
+            power = "on";
+        }
+        else if (power == "on") {
+            $(".switch-right").css("background-color", "black");
+            $(".switch-left").css("background-color", "gray");
+            $(".display").css("opacity", "0.3");
+            
+            power = "off";
+            $(".display").text("--");
+        }
+    });
+
 
 
     //function initialises when start button is clicked
     $(".start").click(function() {
 
-        // increments the level by 1
-        level++;
+        if (power == "on") {
 
-        //Begins the game
-        computerSequence();
+            // increments the level by 1
+            level++;
+
+            //Begins the game
+            computerSequence();
+        }
 
     });
 
     //...................USER SEQUENCE FUNCTION
 
     $(".pad").click(function() {
+            if (power == "on") {
 
-        //id is = to the id of the pad clicked
-        id = $(this).attr("id");
+                //id is = to the id of the pad clicked
+                id = $(this).attr("id");
 
-        // Color is = to the second class associated with the clicked pad. As each pad has a pad class, a unique color class and a third temporary active class while clicked the array returned is indexed at 1 in order to return the color.
-        color = $(this).attr("class").split(" ")[1];
+                // Color is = to the second class associated with the clicked pad. As each pad has a pad class, a unique color class and a third temporary active class while clicked the array returned is indexed at 1 in order to return the color.
+                color = $(this).attr("class").split(" ")[1];
 
-        //Adds the active class and plays a sound to the clicked pad using the id and color as parameters
-        playerSequence.push(id);
+                //Adds the active class and plays a sound to the clicked pad using the id and color as parameters
+                playerSequence.push(id);
 
-        activePad(id, color);
+                activePad(id, color);
 
-        //console.log("playerSequence is " + playerSequence);
+                //console.log("playerSequence is " + playerSequence);
 
-        //TESTING
-        //console.log($(this).attr("class").split(" "));
+                //TESTING
+                //console.log($(this).attr("class").split(" "));
 
-        //If checkSequence is false 
-        if (!checkSequence()) {
+                //If checkSequence is false 
+                if (!checkSequence()) {
 
-            //Run displayError
-            displayError();
+                    //Run displayError
+                    displayError();
 
-            //reset playersequence
-            playerSequence = [];
+                    //reset playersequence
+                    playerSequence = [];
 
-        }
+                }
 
-        //If the the player and computer arrays are the same and the player array is shorter than the max level, as it should be the same length as the computer sequence which in turn is coded according to the level number
-        if (playerSequence.length == gameSequence.length && playerSequence.length < endLevel) {
+                //If the the player and computer arrays are the same and the player array is shorter than the max level, as it should be the same length as the computer sequence which in turn is coded according to the level number
+                if (playerSequence.length == gameSequence.length && playerSequence.length < endLevel) {
 
-            //level = level + 1
-            level++
+                    //level = level + 1
+                    level++
 
-            //resets playerSequence
-            playerSequence = [];
+                    //resets playerSequence
+                    playerSequence = [];
 
-            //reloads computerSequence
-            computerSequence();
+                    //reloads computerSequence
+                    computerSequence();
 
-        }
-        // If playerSequence is shorter than the end level number basically checks if you have completed every level
-        if (playerSequence.length == endLevel) {
+                }
+                // If playerSequence is shorter than the end level number basically checks if you have completed every level
+                if (playerSequence.length == endLevel) {
 
-            //change display to win
-            $(".display").text("Win");
+                    //change display to win
+                    $(".display").text("Win");
 
-            /* var img = document.createElement("img")
-            img.src = "./assets/images/winner.png";
-            $(".display").append(img);
-            $("img").addClass("crown"); */
+                    /* var img = document.createElement("img")
+                    img.src = "./assets/images/winner.png";
+                    $(".display").append(img);
+                    $("img").addClass("crown"); */
 
-            //new audio object
-            var correctSound = new Audio();
+                    //new audio object
+                    var correctSound = new Audio();
 
-            //Source of audio is correct variable
-            correctSound.src = correct;
+                    //Source of audio is correct variable
+                    correctSound.src = correct;
 
-            //audio volume
-            correctSound.volume = 0.3;
+                    //audio volume
+                    correctSound.volume = 0.3;
 
-            //looping is off
-            correctSound.loop = false;
+                    //looping is off
+                    correctSound.loop = false;
 
-            //plays audio file
-            correctSound.play();
+                    //plays audio file
+                    correctSound.play();
 
-        }
-    });
-
+                } }
+            });
+    
 });
 
 

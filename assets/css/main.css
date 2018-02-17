@@ -149,6 +149,7 @@ h1 {
     font-size: 40px;
     background-color: #342626;
     color: white;
+    opacity: 0.3;
 }
 
 /* positions and styles start and strict text */
@@ -185,7 +186,7 @@ h1 {
 
 .switch-right {
     width: 60px;
-    height: 30px;
+    height: 40px;
     border: solid 1px black;
     background-color: black;
 
