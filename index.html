@@ -20,13 +20,33 @@
     <!--Script -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./assets/js/user-sequence.js"></script>
+    <script type="text/javascript" src="./assets/js/victory-modal.js"></script>
 
 </head>
 
 <body>
 
+    <div id="modal">
+        <div class="modal-content">
+            <h1 class="modal-heading">Congratulations!</h1>
+            <p class="modal-text">You Won!</p>
+            <img class="trophy" src="./assets/images/win.png">
+            <button class="modal-button"><a href="index.html">Play Again</a></button></p>
+        </div>
+    </div>
+
     <div class="container">
+        <div class="mode-box">
+            <div class="mode-title">Mode</div>
+            <div class="mode-container">
+                <p class="easy inline-positioner">EASY</p>
+                <div class="mode mode-right inline-positioner">
+                    <div class=" mode-left"></div>
+                </div>
+                <p class="hard inline-positioner">HARD</p>
+                <img class="wire" src="/assets/images/wire.png">
+            </div>
+        </div>
 
         <div class="game-board">
 
@@ -38,7 +58,6 @@
                 <div class="game-title">SIMON</div>
                 <div class="display inline-positioner">--</div>
                 <div class="start inline-positioner">START</div>
-                <div class="strict inline-positioner">STRICT</div>
                 <div class="switch-container">
                     <p class="off inline-positioner">OFF</p>
                     <div class="switch switch-right inline-positioner">
@@ -46,6 +65,7 @@
                     </div>
                     <p class="on inline-positioner">ON</p>
                 </div>
+
 
             </div>
 
