@@ -44,6 +44,8 @@ var off = "./assets/sounds/off.wav";
 var modeSound = "./assets/sounds/modesound.wav";
 
 var menuSound = "./assets/sounds/menu.wav";
+
+var startSound = "./assets/sounds/startSound.wav";
 //......................................................FUNCTIONS
 
 //...................INITALISE FUNCTION
@@ -109,6 +111,7 @@ $(document).ready(function() {
 
             // increments the level by 1
             level++;
+            playStartSound();
 
             //Begins the game
             computerSequence();
@@ -116,7 +119,7 @@ $(document).ready(function() {
 
     });
 
-    //...................USER SEQUENCE FUNCTION
+//...................USER SEQUENCE FUNCTION
 
     $(".pad").click(function() {
         if (power == "on") {
@@ -237,6 +240,16 @@ function playModeSound() {
             theModeSound.volume = 0.2;
             theModeSound.loop = false;
             theModeSound.play();
+};
+
+//..................PLAY START SOUND FUNCTION 
+
+function playStartSound() {
+    var theStartSound = new Audio();
+            theStartSound.src = startSound;
+            theStartSound.volume = 0.2;
+            theStartSound.loop = false;
+            theStartSound.play();
 };
 //...................COMPUTER SEQUENCE FUNCTION
 
