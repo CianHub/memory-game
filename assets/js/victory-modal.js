@@ -19,7 +19,7 @@ var color;
 level = 0;
 
 //The number of levels in the game
-var endLevel = 1;
+var endLevel = 5;
 
 //Stores sound files
 var padSounds = [
@@ -46,14 +46,16 @@ var modeSound = "./assets/sounds/modesound.wav";
 var menuSound = "./assets/sounds/menu.wav";
 
 var startSound = "./assets/sounds/startSound.wav";
+
+var cheer = "./assets/sounds/cheer.mp3"
 //......................................................FUNCTIONS
 
 //...................INITALISE FUNCTION
 
 // Loads when the DOM is ready
 $(document).ready(function() {
-    
-   
+
+
 
     $(".switch").click(function() {
         if (power == "off") {
@@ -119,7 +121,7 @@ $(document).ready(function() {
 
     });
 
-//...................USER SEQUENCE FUNCTION
+    //...................USER SEQUENCE FUNCTION
 
     $(".pad").click(function() {
         if (power == "on") {
@@ -170,30 +172,8 @@ $(document).ready(function() {
             if (playerSequence.length == endLevel) {
 
                 //change display to win
+                playWinSound();
                 $(".display").text("Win");
-
-                /* var img = document.createElement("img")
-                img.src = "./assets/images/winner.png";
-                $(".display").append(img);
-                $("img").addClass("crown"); */
-
-                //new audio object
-                var correctSound = new Audio();
-
-                //Source of audio is correct variable
-                correctSound.src = correct;
-
-                //audio volume
-                correctSound.volume = 0.2;
-
-                //looping is off
-                correctSound.loop = true;
-
-                //plays audio file
-                correctSound.play();
-
-                // When the user clicks the button, open the modal 
-
                 $("#modal").css("visibility", "visible");
                 $("#modal").css("opacity", "1");
                 //$(".container").css("visibility", "hidden")
@@ -212,44 +192,60 @@ $(document).ready(function() {
 
 });
 
+//..................PLAY WIN SOUND FUNCTION
+
+function playWinSound() {
+    var cheerSound = new Audio();
+    cheerSound.src = cheer;
+    cheerSound.volume = 0.2;
+    cheerSound.loop = false;
+    cheerSound.play();
+    var correctSound = new Audio();
+    correctSound.src = correct;
+    correctSound.volume = 0.2;
+    correctSound.loop = false;
+    correctSound.play();
+};
+
+
 //..................PLAY ON SOUND FUNCTION
 
 function playOnSound() {
     var onSound = new Audio();
-            onSound.src = on;
-            onSound.volume = 0.2;
-            onSound.loop = false;
-            onSound.play();
+    onSound.src = on;
+    onSound.volume = 0.2;
+    onSound.loop = false;
+    onSound.play();
 };
 
 //..................PLAY OFF SOUND FUNCTION 
 
 function playOffSound() {
     var offSound = new Audio();
-            offSound.src = off;
-            offSound.volume = 0.2;
-            offSound.loop = false;
-            offSound.play();
+    offSound.src = off;
+    offSound.volume = 0.2;
+    offSound.loop = false;
+    offSound.play();
 };
 
 //..................PLAY MODE SOUND FUNCTION 
 
 function playModeSound() {
     var theModeSound = new Audio();
-            theModeSound.src = modeSound;
-            theModeSound.volume = 0.2;
-            theModeSound.loop = false;
-            theModeSound.play();
+    theModeSound.src = modeSound;
+    theModeSound.volume = 0.2;
+    theModeSound.loop = false;
+    theModeSound.play();
 };
 
 //..................PLAY START SOUND FUNCTION 
 
 function playStartSound() {
     var theStartSound = new Audio();
-            theStartSound.src = startSound;
-            theStartSound.volume = 0.2;
-            theStartSound.loop = false;
-            theStartSound.play();
+    theStartSound.src = startSound;
+    theStartSound.volume = 0.2;
+    theStartSound.loop = false;
+    theStartSound.play();
 };
 //...................COMPUTER SEQUENCE FUNCTION
 
