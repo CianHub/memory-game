@@ -151,10 +151,9 @@ h1 {
     opacity: 0.33;
 }
 
-/* positions and styles start and strict text */
+/* positions and styles start text */
 
-.start,
-.strict {
+.start {
     margin: 0px;
     margin-left: 20px;
     text-align: center;
@@ -171,15 +170,14 @@ h1 {
 /* colors button red */
 
 .start {
-    background-color: red;
+    background-color: darkred;
 
 }
 
 /* colors button yellow */
 
-.strict {
-    background-color: yellow;
-}
+
+
 
 /* styles right side of on/off switch */
 
