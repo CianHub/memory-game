@@ -3,7 +3,7 @@
 /* Sets background image for body, back-up color and project font*/
 
 html {
-    background: url("/assets/images/bg2.jpg") no-repeat center center fixed;
+    background: url("/assets/images/bg2.jpeg") no-repeat center center fixed;
     background-size: cover;
     font-family: "helvetica-neue", sans-serif;
 
@@ -33,7 +33,6 @@ h1 {
     width: 600px;
     height: 600px;
     border-radius: 600px;
-    box-shadow: -10px 10px 7px 0px rgba(50, 50, 50, 0.75);
 }
 
 /* ....................................PADS */
@@ -111,12 +110,12 @@ h1 {
     height: 245px;
     margin-left: 160px;
     margin-top: 160px;
-    background-color: white;
+    background-color: gray;
     border: solid 10px black;
     border-radius: 150px;
     position: absolute;
     z-index: 10;
-    box-shadow: -10px 10px 7px 0px rgba(50, 50, 50, 0.75);
+  
 
 }
 
@@ -205,11 +204,10 @@ h1 {
     height: 150px;
     margin-left: 160px;
     margin-top: 160px;
-    background-color: white;
+    background-color: gray;
     border: solid 10px black;
     position: absolute;
     z-index: 10;
-    box-shadow: -10px 10px 7px 0px rgba(50, 50, 50, 0.75);
     border-radius: 15%;
 
 }
