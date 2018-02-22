@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <!-- Meta -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Styles -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- Title -->
+
+    <title> Memory Game</title>
+
+    <!--Script -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+
+</head>
+<body>
+    <div id="modal">
+        <div class="modal-content">
+            <h1 class="modal-heading">Congratulations!</h1>
+            <p class="modal-text">Your time was </p>
+            <img class="trophy" src="./assets/images/win.png">
+            <button class="modal-button "><a href="index.html ">Play Again</a></button></p>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="mode-box ">
+            <img class="wire " src="/assets/images/wire.png ">
+            <div class="mode-title ">Mode</div>
+            <div class="mode-container ">
+                <p class="easy inline-positioner ">EASY</p>
+                <div class="mode mode-right inline-positioner ">
+                    <div class=" mode-left "></div>
+                </div>
+                <p class="hard inline-positioner ">HARD</p>
+            </div>
+        </div>
+        <div class="game-board ">
+            <div id="0" class="pad green "></div>
+            <div id="1" class="pad red "></div>
+            <div id="2" class="pad yellow "></div>
+            <div id="3" class="pad blue "></div>
+            <div class="controls ">
+                <div class="game-title ">SIMON</div>
+                <div class="display inline-positioner ">--</div>
+                <div class="start inline-positioner ">START</div>
+                <div class="switch-container ">
+                    <p class="off inline-positioner ">OFF</p>
+                    <div class="switch switch-right inline-positioner ">
+                        <div class=" switch-left "></div>
+                    </div>
+                    <p class="on inline-positioner ">ON</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
