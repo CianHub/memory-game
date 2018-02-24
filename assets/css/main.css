@@ -3,11 +3,8 @@
 /* Sets background image for body, back-up color and project font*/
 
 html {
-<<<<<<< HEAD
+
     background: url("./assets/images/bg2.jpeg") no-repeat center center fixed;
-=======
-    background: url("/assets/images/bg2.jpeg") no-repeat center center fixed;
->>>>>>> ab144b148ee0c958869254f3e8696db8fe97e923
     background-size: cover;
     font-family: "helvetica-neue", sans-serif;
 
