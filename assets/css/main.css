@@ -4,7 +4,7 @@
 
 html {
 
-    background: url("./assets/images/bg2.jpeg") no-repeat center center fixed;
+    background: url("./bg2.jpeg") no-repeat center center fixed;
     background-size: cover;
     font-family: "helvetica-neue", sans-serif;
 
@@ -116,7 +116,7 @@ h1 {
     border-radius: 150px;
     position: absolute;
     z-index: 10;
-  
+
 
 }
 
@@ -153,7 +153,8 @@ h1 {
 
 /* positions and styles start text */
 
-.start {
+.start,
+.strict {
     margin: 0px;
     margin-left: 20px;
     text-align: center;
@@ -174,17 +175,20 @@ h1 {
 
 }
 
+.strict {
+
+    background-color: gray;
+
+}
+
 /* colors button yellow */
-
-
-
 
 /* styles right side of on/off switch */
 
 .switch-right {
     width: 60px;
     height: 30px;
-    border: solid 1px black;
+    border: solid 1px ;
     background-color: black;
 
 }
@@ -198,79 +202,9 @@ h1 {
 
 }
 
-/*...................................GAME MODE SWITCH */
-
-.mode-box {
-    width: 300px;
-    height: 150px;
-    margin-left: 160px;
-    margin-top: 160px;
-    background-color: gray;
-    border: solid 10px black;
-    position: absolute;
-    z-index: 10;
-    border-radius: 15%;
-
-}
-
-.mode-right {
-    width: 140px;
-    height: 30px;
-    border: solid 1px black;
-    background-color: black;
-    
-
-
-}
-
-/* styles left side of on/off switch */
-
-.mode-left {
-    width: 70px;
-    height: 30px;
-    background-color: gray;
-
-
-}
-
-
-.easy,
-.hard {
-    color: black;
-}
-
-.mode-container {
-    padding-top: 10px;
-    top: 50%;
-    left: 50%;
-
-}
-
-.mode-title {
-    margin-top: 30px;
-    
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
-    top: 50%;
-    left: 50%;
-
-
-
-}
-
-.wire {
-    position: absolute;
-    top: 30%;
-    left: 100%;
-    width: 60%;
-    z-index: -10;
-  -webkit-filter: drop-shadow(5px 5px 5px rgba(50, 50, 50, 0.75));
-
-    
-}
 
 /*.................................VICTORY MODAL*/
+
 /* The animation code */
 
 #modal {
@@ -285,7 +219,7 @@ h1 {
     transform: scaleX(1.1) scaleY(1.1);
     transition: visibility 0.5s linear 0.25s, opacity 0.75s 0s, transform 0.75s;
     z-index: 10;
-    
+
 }
 
 .modal-content {
@@ -338,7 +272,6 @@ a {
     color: white;
     background-color: rgb(92, 184, 92);
     font-family: "helvetica-neue", sans-serif;
-    border-bottom-color: rgb(92, 184, 92);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     border-bottom-style: solid;
@@ -348,13 +281,10 @@ a {
     border-image-slice: 100%;
     border-image-source: none;
     border-image-width: 1;
-    border-left-color: rgb(92, 184, 92);
     border-left-style: solid;
     border-left-width: 1px;
-    border-right-color: rgb(92, 184, 92);
     border-right-style: solid;
     border-right-width: 1px;
-    border-top-color: rgb(92, 184, 92);
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-top-style: solid;
@@ -364,7 +294,6 @@ a {
     cursor: default;
     font-family: sans-serif;
     font-size: 16px;
-    font-stretch: 100%;
     font-style: normal;
     font-variant-caps: normal;
     font-variant-east-asian: normal;
@@ -399,3 +328,5 @@ a {
     white-space: nowrap;
     word-spacing: 0px;
 }
+
+

@@ -20,7 +20,7 @@
     <!--Script -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
 
 </head>
 <body>
@@ -28,32 +28,22 @@
         <div class="modal-content">
             <h1 class="modal-heading">Congratulations!</h1>
             <p class="modal-text">Your time was </p>
-            <img class="trophy" src="./assets/images/win.png">
-            <button class="modal-button "><a href="index.html ">Play Again</a></button></p>
+            <img class="trophy" alt="trophy" src="./assets/images/win.png">
+            <button class="modal-button " onclick="window.location.href='index.html'">Play Again</button>
         </div>
     </div>
     <div class="container ">
-        <div class="mode-box ">
-            <img class="wire " src="./assets/images/wire.png ">
-            <div class="mode-title ">Mode</div>
-            <div class="mode-container ">
-                <p class="easy inline-positioner ">EASY</p>
-                <div class="mode mode-right inline-positioner ">
-                    <div class=" mode-left "></div>
-                </div>
-                <p class="hard inline-positioner ">HARD</p>
-            </div>
-        </div>
         <div class="game-board ">
-            <div id="0" class="pad green "></div>
-            <div id="1" class="pad red "></div>
-            <div id="2" class="pad yellow "></div>
-            <div id="3" class="pad blue "></div>
+            <div id="0" class="pad green" onclick="stopReplay.stop();"></div>
+            <div id="1" class="pad red" onclick="stopReplay.stop();"></div>
+            <div id="2" class="pad yellow" onclick="stopReplay.stop();" ></div>
+            <div id="3" class="pad blue" onclick="stopReplay.stop();"></div>
             <div class="controls ">
                 <div class="game-title ">SIMON</div>
                 <div class="display inline-positioner ">--</div>
-                <div class="start inline-positioner ">START</div>
-                <div class="switch-container ">
+                <div class="start inline-positioner " onclick="stopReplay.stop();">START</div>
+                <div class="strict inline-positioner " onclick="stopReplay.stop();">STRICT</div>
+                <div class="switch-container" onclick="stopReplay.stop(); ">
                     <p class="off inline-positioner ">OFF</p>
                     <div class="switch switch-right inline-positioner ">
                         <div class=" switch-left "></div>
