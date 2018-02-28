@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 
     <!-- Meta -->
@@ -13,6 +14,15 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css">
 
+    <!-- Testing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine-html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/boot.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmi ne/2.7.0/jasmine.css" />
+    
+    <script type="text/javascript" src="/scripts/test.js"></script>
+    <script type="text/javascript" src="/spec/testSpec.js"></script>
+
     <!-- Title -->
 
     <title> Memory Game</title>
@@ -23,6 +33,7 @@
     <script src="./assets/js/main.js"></script>
 
 </head>
+
 <body>
     <div id="modal">
         <div class="modal-content">
@@ -36,7 +47,7 @@
         <div class="game-board ">
             <div id="0" class="pad green" onclick="stopReplay.stop();"></div>
             <div id="1" class="pad red" onclick="stopReplay.stop();"></div>
-            <div id="2" class="pad yellow" onclick="stopReplay.stop();" ></div>
+            <div id="2" class="pad yellow" onclick="stopReplay.stop();"></div>
             <div id="3" class="pad blue" onclick="stopReplay.stop();"></div>
             <div class="controls ">
                 <div class="game-title ">SIMON</div>
@@ -54,4 +65,5 @@
         </div>
     </div>
 </body>
+
 </html>

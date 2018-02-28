@@ -214,6 +214,7 @@ function computerSequence() {
     randomNumberGenerator();
     playComputerSequence();
     replay();
+    
 }
 
 //...................PLAY COMPUTER SEQUENCE FUNCTION
