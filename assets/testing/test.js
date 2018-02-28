@@ -73,7 +73,7 @@ $(document).ready(function() {
             $(".switch-right").css("background-color", "gray");
             $(".switch-left").css("background-color", "black");
             $(".display").css("opacity", "1");
-            playSound(on);
+            playOnSound();
             playerSequence = [];
             gameSequence = [];
             level = 0;
@@ -94,7 +94,7 @@ $(document).ready(function() {
             $(".switch-right").css("background-color", "black");
             $(".switch-left").css("background-color", "gray");
             $(".display").css("opacity", "0.3");
-            playSound(off);
+            playOffSound();
             power = "off";
             $(".display").text("--");
             mistakes = 0;
@@ -120,7 +120,7 @@ $(document).ready(function() {
             gameSequence = [];
             level = 0;
             $(".display").text("--");
-            playSound(modeSound);
+            playModeSound();
             mistakes = 0;
             strictMode = "on";
         }
@@ -130,7 +130,7 @@ $(document).ready(function() {
             gameSequence = [];
             level = 0;
             $(".display").text("--");
-            playSound(modeSound);
+            playModeSound();
             mistakes = 0;
             strictMode = "off";
         }
@@ -141,7 +141,7 @@ $(document).ready(function() {
     $(".start").click(function() {
         if (power == "on") {
             level++;
-            playSound(startSound)
+            playStartSound();
             computerSequence();
         }
     });
@@ -168,12 +168,10 @@ $(document).ready(function() {
             setTimeout(
                 nextLevel(), 4000);
             if (playerSequence.length == endLevel) {
-                playSound(correct);
-                playSound(cheer);
+                playWinSound();
                 $(".display").text("Win");
                 $("#modal").css("visibility", "visible");
                 $("#modal").css("opacity", "1");
-                //$(".container").css("visibility", "hidden")
                 $(".container").css("z-index", "0");
                 $(".controls").css("z-index", "8");
                 $(".mode-box").css("z-index", "0");
@@ -248,7 +246,7 @@ function randomNumberGenerator() {
 
 function activePad(id, color) {
     $("#" + id).addClass(color + "-active");
-    playSound(padSounds[id]);
+    padSound(id);
     setTimeout(function() {
         $("#" + id).removeClass(color + "-active");
     }, 500);
@@ -278,7 +276,7 @@ function displayError() {
             $(".display").text(level);
             clearInterval(myError);
             count = 0;
-            playSound(incorrect);
+            playErrorSound();
             setTimeout(function() {
                 playComputerSequence();
             }, 500);
@@ -291,7 +289,7 @@ function displayError() {
 function strict() {
     $(".display").text("!!");
     $(".display").text(level);
-    setTimeout(playSound(incorrect),
+    setTimeout(playErrorSound(),
         2000);
 }
 
@@ -325,7 +323,80 @@ function replay() {
     }, 1000);
 }
 
-//..................PLAY SOUND FUNCTION 
+//...................PAD SOUND FUNCTION
+
+function padSound(id) {
+    var audio = new Audio();
+    audio.src = padSounds[id];
+    audio.volume = 0.3;
+    audio.loop = false;
+    audio.play();
+}
+
+//..................PLAY ERROR SOUND FUNCTION
+
+function playErrorSound() {
+    var errorSound = new Audio();
+    errorSound.src = incorrect;
+    errorSound.volume = 0.4;
+    errorSound.loop = false;
+    errorSound.play();
+}
+
+//..................PLAY WIN SOUND FUNCTION
+
+function playWinSound() {
+    var cheerSound = new Audio();
+    cheerSound.src = cheer;
+    cheerSound.volume = 0.2;
+    cheerSound.loop = false;
+    cheerSound.play();
+    var correctSound = new Audio();
+    correctSound.src = correct;
+    correctSound.volume = 0.1;
+    correctSound.loop = false;
+    correctSound.play();
+}
+
+//..................PLAY ON SOUND FUNCTION
+
+function playOnSound() {
+    var onSound = new Audio();
+    onSound.src = on;
+    onSound.volume = 0.2;
+    onSound.loop = false;
+    onSound.play();
+}
+
+//..................PLAY OFF SOUND FUNCTION 
+
+function playOffSound() {
+    var offSound = new Audio();
+    offSound.src = off;
+    offSound.volume = 0.2;
+    offSound.loop = false;
+    offSound.play();
+}
+
+//..................PLAY MODE SOUND FUNCTION 
+
+function playModeSound() {
+    var theModeSound = new Audio();
+    theModeSound.src = modeSound;
+    theModeSound.volume = 0.2;
+    theModeSound.loop = false;
+    theModeSound.play();
+}
+
+//..................PLAY START SOUND FUNCTION 
+
+function playStartSound() {
+    var theStartSound = new Audio();
+    theStartSound.src = startSound;
+    theStartSound.volume = 0.2;
+    theStartSound.loop = false;
+    theStartSound.play();
+}
 
 function playSound(sound) {
     var audio = new Audio();
