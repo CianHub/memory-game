@@ -3,14 +3,16 @@
 /* Sets background image for body, back-up color and project font*/
 
 html {
-    
-    background-size: cover;
+
     font-family: "helvetica-neue", sans-serif;
+}
+
+body {
     background-image: url("bg2.jpeg");
     background-repeat: no-repeat;
     background-position: center;
-    
-
+    height: 100vh;
+    background-size: cover;
 }
 
 h1 {
@@ -191,7 +193,7 @@ h1 {
 .switch-right {
     width: 60px;
     height: 30px;
-    border: solid 1px ;
+    border: solid 1px;
     background-color: black;
 
 }
@@ -331,5 +333,3 @@ a {
     white-space: nowrap;
     word-spacing: 0px;
 }
-
-

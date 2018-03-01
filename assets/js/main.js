@@ -268,7 +268,6 @@ function checkSequence() {
 //...................DISPLAY ERROR FUNCTION
 
 function displayError() {
-    console.log("error");
     var count = 0;
     mistakes++;
     var myError = setInterval(function() {

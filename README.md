@@ -23,3 +23,7 @@ The application was developed with HTML5, CSS3, JavaScript and JQuery.
 
 Each piece of functionality was extensively tested during development in a variety of ways including user-testing with the console and where possible testing with Jasmine.js.
 
+## Deployment
+
+The application was deployed on GitHub Pages and can be found at https://cianhub.github.io/memory-game/
+
