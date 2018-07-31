@@ -226,7 +226,12 @@ function playComputerSequence() {
     clickable = "no";
     var gameInterval = setInterval(function() {
         id = gameSequence[i];
-        color = $("#" + id).attr("class").split(" ")[1];
+        try {
+            color = $("#" + id).attr("class").split(" ")[1];
+        }
+        catch(err) {
+             clearInterval(gameInterval);
+        }
         activePad(id, color);
         i++;
         if (i == gameSequence.length) {
