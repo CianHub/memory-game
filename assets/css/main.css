@@ -1,11 +1,13 @@
 /* ....................................GENERAL */
 
-/* Sets background image for body, back-up color and project font*/
+/* Sets project font*/
 
 html {
 
     font-family: "helvetica-neue", sans-serif;
 }
+
+/* Sets background image */
 
 body {
     background-image: url("bg2.jpeg");
@@ -14,6 +16,8 @@ body {
     height: 100vh;
     background-size: cover;
 }
+
+/* Sets font color*/
 
 h1 {
     color: white;
@@ -180,13 +184,13 @@ h1 {
 
 }
 
+/* colors button grey */
+
 .strict {
 
     background-color: gray;
 
 }
-
-/* colors button yellow */
 
 /* styles right side of on/off switch */
 
