@@ -10,7 +10,7 @@ var color;
 
 level = 0;
 
-var endLevel = 20;
+var endLevel = 10;
 
 var padSounds = [
     "./assets/sounds/pad0.mp3", // green
