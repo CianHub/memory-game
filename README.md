@@ -96,4 +96,4 @@ The website has been deployed to Github pages and can be found at: <https://cian
 
 ### Acknowledgements
 
-- This project is a web browser based recreation of the original [SIMON game](https://en.wikipedia.org/wiki/Simon_(game) 
+- This project is a web browser based recreation of the original [SIMON game](https://en.wikipedia.org/wiki/Simon_(game))
