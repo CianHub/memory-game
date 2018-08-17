@@ -173,7 +173,6 @@ $(document).ready(function() {
                 $(".display").text("Win");
                 $("#modal").css("visibility", "visible");
                 $("#modal").css("opacity", "1");
-                //$(".container").css("visibility", "hidden")
                 $(".container").css("z-index", "0");
                 $(".controls").css("z-index", "8");
                 $(".mode-box").css("z-index", "0");
